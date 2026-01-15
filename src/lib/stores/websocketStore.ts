@@ -26,8 +26,8 @@ export const useWebSocketStore = create<WebSocketState>((set, get) => ({
 
     set({ isConnecting: true });
 
-    const BASE_URL = import.meta.env.VITE_PUBLIC_PATH || '';
-    const socket = new SockJS(`${BASE_URL}/ws`);
+    const WS_URL = 'http://localhost:8081/ws';
+    const socket = new SockJS(WS_URL);
     const client = new Client({
       webSocketFactory: () => socket,
       connectHeaders: {
