@@ -40,8 +40,8 @@ export default function MessageThread({ conversationId, onSendMessage, isConnect
   }, [conversationId, updateParams, clearData, updateConversationDetailParam, clearConversationDetailData]);
 
   useEffect(() => {
-    if (conversation && conversation.lastestMessage) {
-      markDirectMessageAsRead(conversation.id, conversation.lastestMessage.id);
+    if (conversation && conversation.lastMessage) {
+      markDirectMessageAsRead(conversation.id, conversation.lastMessage.id);
       updateConversation(conversation.id, { hasUnread: false });
     }
   }, [conversation]);

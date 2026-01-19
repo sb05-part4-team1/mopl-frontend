@@ -815,7 +815,7 @@ export interface components {
             /** @description 대화 상대 정보 */
             with: components["schemas"]["UserSummary"];
             /** @description 마지막 메시지 내용 */
-            lastestMessage: components["schemas"]["DirectMessageDto"];
+            lastMessage: components["schemas"]["DirectMessageDto"];
             /** @description 읽지 않은 메시지 존재 여부 */
             hasUnread: boolean;
         };
