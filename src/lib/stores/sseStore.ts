@@ -26,8 +26,8 @@ export const useSseStore = create<SseState>((set, get) => ({
 
     try {
       console.log('[SSE] Try to connect');
-      const BASE_URL = import.meta.env.VITE_PUBLIC_PATH || '';
-      const eventSource = new EventSourcePolyfill(`${BASE_URL}/api/sse`, {
+      const SSE_URL = import.meta.env.VITE_SSE_BASE_URL || 'http://localhost:8082';
+      const eventSource = new EventSourcePolyfill(`${SSE_URL}/api/sse`, {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
