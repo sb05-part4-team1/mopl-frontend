@@ -26,7 +26,7 @@ function useDebounce<T>(value: T, delay: number): T {
 
 export default function SearchBar({
   onSearch,
-  placeholder = 'Name, Email,etc...',
+  placeholder = 'Email',
   className,
 }: SearchBarProps) {
   const [value, setValue] = useState('');

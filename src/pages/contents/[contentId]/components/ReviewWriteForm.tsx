@@ -110,7 +110,7 @@ export default function ReviewWriteForm({
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         placeholder="오늘 진짜 재밌는 영화를 보게 돼서 기뻐요"
-        className="w-full h-[200px] bg-gray-800/50 border-2 border-pink-600 rounded-xl px-5 py-4 text-body2-m-140 text-gray-100 placeholder:text-gray-100 resize-none focus:outline-none focus:border-pink-600"
+        className="w-full h-[200px] bg-gray-800/50 border-2 border-pink-600 rounded-xl px-5 py-4 text-body2-m-140 text-gray-100 placeholder:text-gray-400 resize-none focus:outline-none focus:border-pink-600"
         disabled={isSubmitting}
       />
 

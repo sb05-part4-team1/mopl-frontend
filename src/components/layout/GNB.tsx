@@ -134,7 +134,7 @@ export default function GNB() {
               <DropdownMenuTrigger asChild>
                 <button
                   type="button"
-                  className="relative size-6 overflow-hidden rounded-full border border-white/10 bg-gray-600"
+                  className="relative size-[31px] overflow-hidden rounded-full bg-gray-600"
                   aria-label="Profile"
                 >
                   <img
