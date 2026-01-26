@@ -1,5 +1,6 @@
 import type {BaseStore, CursorState, ListStore, PaginatedStore} from "@/lib/stores/types.ts";
 import type {CursorParams, CursorResponse} from "@/lib/api";
+import {snakeToCamel} from "@/lib/stores/utils.ts";
 
 type SetType<S> = {
   (partial: S | Partial<S> | ((state: S) => S | Partial<S>), replace?: false | undefined): void;
@@ -118,9 +119,10 @@ export function createListStoreActions<T, P>(
 
         // 정렬된 위치 찾기
         const newItems = [...data, newItem];
+        const sortKey = snakeToCamel(sortBy);
         const sortedData = newItems.sort((a, b) => {
-          const aValue = (a as any)[sortBy];
-          const bValue = (b as any)[sortBy];
+          const aValue = (a as any)[sortKey];
+          const bValue = (b as any)[sortKey];
 
           if (sortDirection === 'ASCENDING') {
             return aValue > bValue ? 1 : -1;
@@ -241,9 +243,10 @@ export function createPaginatedStoreActions<T, P extends CursorParams>(
 
         // 정렬된 위치 찾기
         const newItems = [...data, newItem];
+        const sortKey = snakeToCamel(sortBy);
         const sortedData = newItems.sort((a, b) => {
-          const aValue = (a as any)[sortBy];
-          const bValue = (b as any)[sortBy];
+          const aValue = (a as any)[sortKey];
+          const bValue = (b as any)[sortKey];
 
           if (sortDirection === 'ASCENDING') {
             return aValue > bValue ? 1 : -1;

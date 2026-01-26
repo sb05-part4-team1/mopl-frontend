@@ -3,6 +3,13 @@ import {type SortDirection} from "@/lib/api";
 const loadingKey = 'loading';
 const errorKey = 'error';
 
+/**
+ * SNAKE_CASE를 camelCase로 변환
+ */
+export function snakeToCamel(str: string): string {
+  return str.toLowerCase().replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+}
+
 export type ExecuteOptions<T> = {
   onSuccess?: (
       result: T,
@@ -93,10 +100,11 @@ export function insertItemWithSort<T extends { id: string }>(
 
   // 정렬된 위치 찾기
   const newItems = [...items, newItem];
+  const sortKey = snakeToCamel(sortBy);
   return newItems.sort((a, b) => {
-    const aValue = (a as any)[sortBy];
-    const bValue = (b as any)[sortBy];
-    
+    const aValue = (a as any)[sortKey];
+    const bValue = (b as any)[sortKey];
+
     if (sortDirection === 'ASCENDING') {
       return aValue > bValue ? 1 : -1;
     } else {
