@@ -15,7 +15,7 @@ const useDirectMessageStore = create<PaginatedStore<DirectMessageDto, DirectMess
       return getDirectMessages(conversationId, queryParams);
     },
     initialData: {
-      params: { conversationId: '', limit: 20, sortBy: 'createdAt', sortDirection: 'DESCENDING' },
+      params: { conversationId: '', limit: 20, sortBy: 'CREATED_AT', sortDirection: 'DESCENDING' },
     },
   })
 );

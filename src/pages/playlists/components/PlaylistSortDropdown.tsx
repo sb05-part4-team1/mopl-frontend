@@ -19,8 +19,8 @@ interface PlaylistSortDropdownProps {
 }
 
 const SORT_OPTIONS: (SortOption & { value: string })[] = [
-  { value: 'latest', label: '최신순', sortBy: 'updatedAt', sortDirection: 'DESCENDING' },
-  { value: 'popular', label: '구독순', sortBy: 'subscribeCount', sortDirection: 'DESCENDING' },
+  { value: 'latest', label: '최신순', sortBy: 'UPDATED_AT', sortDirection: 'DESCENDING' },
+  { value: 'popular', label: '구독순', sortBy: 'SUBSCRIBER_COUNT', sortDirection: 'DESCENDING' },
 ];
 
 export default function PlaylistSortDropdown({

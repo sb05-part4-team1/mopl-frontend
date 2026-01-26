@@ -10,7 +10,7 @@ const usePlaylistStore = create<PaginatedStore<PlaylistDto, FindPlaylistsParams>
     get,
     fetchApi: getPlaylists,
     initialData: {
-      params: { limit: 20, sortBy: 'updatedAt', sortDirection: 'DESCENDING' },
+      params: { limit: 20, sortBy: 'UPDATED_AT', sortDirection: 'DESCENDING' },
     },
   })
 );

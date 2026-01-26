@@ -10,7 +10,7 @@ const useUserStore = create<PaginatedStore<UserDto, FindUsersParams>>((set, get)
     get,
     fetchApi: getUsers,
     initialData: {
-      params: { limit: 20, sortBy: 'name', sortDirection: 'ASCENDING' },
+      params: { limit: 20, sortBy: 'NAME', sortDirection: 'ASCENDING' },
     },
   })
 );

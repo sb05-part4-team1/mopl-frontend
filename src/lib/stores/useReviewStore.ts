@@ -13,7 +13,7 @@ const useReviewStore = create<PaginatedStore<ReviewDto, FindReviewsParams>>((set
       params: {
         limit: 20,
         sortDirection: 'DESCENDING',
-        sortBy: 'createdAt',
+        sortBy: 'CREATED_AT',
       },
     },
   })

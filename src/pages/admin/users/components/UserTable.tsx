@@ -11,7 +11,7 @@ import LockButton from './LockButton';
 import RoleToggle from './RoleToggle';
 import SortableHeader from './SortableHeader';
 
-type SortBy = 'name' | 'email' | 'createdAt' | 'isLocked' | 'role';
+type SortBy = 'NAME' | 'EMAIL' | 'CREATED_AT' | 'IS_LOCKED' | 'ROLE';
 
 interface UserTableProps {
   users: UserDto[];
@@ -48,7 +48,7 @@ function TableHeaderComponent({
         <TableHead className="w-[200px]">
           <SortableHeader
             label="이름"
-            sortKey="name"
+            sortKey="NAME"
             currentSortBy={sortBy}
             currentSortDirection={sortDirection}
             onSort={onSort}
@@ -57,7 +57,7 @@ function TableHeaderComponent({
         <TableHead className="w-[200px]">
           <SortableHeader
             label="이메일"
-            sortKey="email"
+            sortKey="EMAIL"
             currentSortBy={sortBy}
             currentSortDirection={sortDirection}
             onSort={onSort}
@@ -66,7 +66,7 @@ function TableHeaderComponent({
         <TableHead className="w-[140px]">
           <SortableHeader
             label="가입일"
-            sortKey="createdAt"
+            sortKey="CREATED_AT"
             currentSortBy={sortBy}
             currentSortDirection={sortDirection}
             onSort={onSort}
@@ -75,7 +75,7 @@ function TableHeaderComponent({
         <TableHead className="w-[140px]">
           <SortableHeader
             label="계정 잠금"
-            sortKey="isLocked"
+            sortKey="IS_LOCKED"
             currentSortBy={sortBy}
             currentSortDirection={sortDirection}
             onSort={onSort}
@@ -84,7 +84,7 @@ function TableHeaderComponent({
         <TableHead className="w-[100px]">
           <SortableHeader
             label="ADMIN"
-            sortKey="role"
+            sortKey="ROLE"
             currentSortBy={sortBy}
             currentSortDirection={sortDirection}
             onSort={onSort}

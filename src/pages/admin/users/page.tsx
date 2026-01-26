@@ -9,7 +9,7 @@ import SearchBar from './components/SearchBar';
 import UserTable, { LoadingSkeleton } from './components/UserTable';
 import ConfirmDialog from '@/components/ui/confirm-dialog';
 
-type SortBy = 'name' | 'email' | 'createdAt' | 'isLocked' | 'role';
+type SortBy = 'NAME' | 'EMAIL' | 'CREATED_AT' | 'IS_LOCKED' | 'ROLE';
 
 interface ConfirmDialogState {
   open: boolean;
@@ -60,7 +60,7 @@ export default function AdminUsersPage() {
         updateParams({ sortDirection: 'DESCENDING' as SortDirection });
       } else if (currentDirection === 'DESCENDING') {
         // Same column, currently DESC - clear sort
-        updateParams({ sortBy: 'name', sortDirection: 'ASCENDING' });
+        updateParams({ sortBy: 'NAME', sortDirection: 'ASCENDING' });
       } else {
         // No sort active - start with ASC
         updateParams({ sortBy, sortDirection: 'ASCENDING' as SortDirection });

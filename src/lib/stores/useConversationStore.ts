@@ -10,7 +10,7 @@ const useConversationStore = create<PaginatedStore<ConversationDto, FindConversa
     get,
     fetchApi: getConversations,
     initialData: {
-      params: { limit: 20, sortBy: 'createdAt', sortDirection: 'DESCENDING' },
+      params: { limit: 20, sortBy: 'CREATED_AT', sortDirection: 'DESCENDING' },
     },
   })
 );

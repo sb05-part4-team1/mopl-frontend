@@ -36,7 +36,7 @@ export default function PlaylistsPage() {
   // Handle sort change
   const handleSortChange = useCallback(
     (option: SortOption) => {
-      setSortValue(option.sortBy === 'updatedAt' ? 'latest' : 'popular');
+      setSortValue(option.sortBy === 'UPDATED_AT' ? 'latest' : 'popular');
       updateParams({
         sortBy: option.sortBy,
         sortDirection: option.sortDirection,

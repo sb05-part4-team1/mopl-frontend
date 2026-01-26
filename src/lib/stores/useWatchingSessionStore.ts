@@ -15,7 +15,7 @@ const useWatchingSessionStore = create<PaginatedStore<WatchingSessionDto, Watchi
       return getWatchingSessionsByContent(contentId, queryParams);
     },
     initialData: {
-      params: { contentId: '', limit: 50, sortBy: 'createdAt', sortDirection: 'ASCENDING' },
+      params: { contentId: '', limit: 50, sortBy: 'CREATED_AT', sortDirection: 'ASCENDING' },
     },
   })
 );

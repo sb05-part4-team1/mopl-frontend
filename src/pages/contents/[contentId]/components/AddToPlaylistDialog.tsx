@@ -52,7 +52,7 @@ export default function AddToPlaylistDialog({
         ownerIdEqual: jwt.userDto.id,
         limit: 100,
         sortDirection: 'DESCENDING',
-        sortBy: 'updatedAt',
+        sortBy: 'UPDATED_AT',
       });
 
       // 이미 추가된 콘텐츠가 있는 플레이리스트 필터링

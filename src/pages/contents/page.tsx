@@ -53,9 +53,9 @@ export default function ContentsPage() {
   const handleSortChange = useCallback(
     (option: SortOption) => {
       setSortValue(
-        option.sortBy === 'createdAt'
+        option.sortBy === 'CREATED_AT'
           ? 'latest'
-          : option.sortBy === 'watcherCount'
+          : option.sortBy === 'POPULARITY'
             ? 'popular'
             : 'rating'
       );

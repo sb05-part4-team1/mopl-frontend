@@ -19,9 +19,9 @@ interface SortDropdownProps {
 }
 
 const SORT_OPTIONS: (SortOption & { value: string })[] = [
-  { value: 'popular', label: '인기순', sortBy: 'watcherCount', sortDirection: 'DESCENDING' },
-  { value: 'latest', label: '최신순', sortBy: 'createdAt', sortDirection: 'DESCENDING' },
-  { value: 'rating', label: '평점순', sortBy: 'rate', sortDirection: 'DESCENDING' },
+  { value: 'popular', label: '인기순', sortBy: 'POPULARITY', sortDirection: 'DESCENDING' },
+  { value: 'latest', label: '최신순', sortBy: 'CREATED_AT', sortDirection: 'DESCENDING' },
+  { value: 'rating', label: '평점순', sortBy: 'RATE', sortDirection: 'DESCENDING' },
 ];
 
 export default function SortDropdown({ value, onValueChange }: SortDropdownProps) {

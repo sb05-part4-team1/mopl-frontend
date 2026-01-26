@@ -10,7 +10,7 @@ const useContentStore = create<PaginatedStore<ContentDto, FindContentsParams>>((
     get,
     fetchApi: getContents,
     initialData: {
-      params: { limit: 20, sortBy: 'watcherCount', sortDirection: 'DESCENDING' },
+      params: { limit: 20, sortBy: 'POPULARITY', sortDirection: 'DESCENDING' },
     },
   })
 );

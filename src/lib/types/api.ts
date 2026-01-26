@@ -1219,7 +1219,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "name" | "email" | "createdAt" | "isLocked" | "role";
+                sortBy: "NAME" | "EMAIL" | "CREATED_AT" | "IS_LOCKED" | "ROLE";
             };
             header?: never;
             path?: never;
@@ -1348,7 +1348,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt" | "rating";
+                sortBy: "CREATED_AT" | "RATING";
             };
             header?: never;
             path?: never;
@@ -1472,7 +1472,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "updatedAt" | "subscribeCount";
+                sortBy: "UPDATED_AT" | "SUBSCRIBER_COUNT";
             };
             header?: never;
             path?: never;
@@ -1888,7 +1888,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt";
+                sortBy: "CREATED_AT";
             };
             header?: never;
             path?: never;
@@ -2051,7 +2051,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt" | "watcherCount" | "rate";
+                sortBy: "CREATED_AT" | "POPULARITY" | "RATE";
             };
             header?: never;
             path?: never;
@@ -3234,7 +3234,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt";
+                sortBy: "CREATED_AT";
             };
             header?: never;
             path?: never;
@@ -3448,7 +3448,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt";
+                sortBy: "CREATED_AT";
             };
             header?: never;
             path: {
@@ -3568,7 +3568,7 @@ export interface operations {
                 /** @description 정렬 방향 */
                 sortDirection: "ASCENDING" | "DESCENDING";
                 /** @description 정렬 기준 */
-                sortBy: "createdAt";
+                sortBy: "CREATED_AT";
             };
             header?: never;
             path: {
