@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 
 interface UseCountdownReturn {
   seconds: number;
@@ -16,27 +16,31 @@ interface UseCountdownReturn {
  * // formatTime() returns "03:00", "02:59", ... "00:00"
  */
 export function useCountdown(initialSeconds: number): UseCountdownReturn {
+  const [endTime, setEndTime] = useState(() => Date.now() + initialSeconds * 1000);
   const [seconds, setSeconds] = useState(initialSeconds);
 
   useEffect(() => {
-    if (seconds <= 0) return;
+    const updateRemaining = () => {
+      const remaining = Math.max(0, Math.ceil((endTime - Date.now()) / 1000));
+      setSeconds(remaining);
+    };
 
-    const timer = setInterval(() => {
-      setSeconds((s) => Math.max(0, s - 1));
-    }, 1000);
+    updateRemaining();
+    const timer = setInterval(updateRemaining, 100);
 
     return () => clearInterval(timer);
-  }, [seconds]);
+  }, [endTime]);
 
-  const formatTime = (): string => {
+  const formatTime = useCallback((): string => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  };
+  }, [seconds]);
 
-  const reset = (newSeconds?: number): void => {
-    setSeconds(newSeconds ?? initialSeconds);
-  };
+  const reset = useCallback((newSeconds?: number): void => {
+    const duration = newSeconds ?? initialSeconds;
+    setEndTime(Date.now() + duration * 1000);
+  }, [initialSeconds]);
 
   return {
     seconds,
