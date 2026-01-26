@@ -192,11 +192,12 @@ export default function UserProfileSection({userId}: {userId: string}) {
 
     const fetchFollowStatus = async () => {
       try {
-        const [followed, count] = await Promise.all([
+        const [followStatus, count] = await Promise.all([
           isFollowedByMe(userId),
           getFollowerCount(userId),
         ]);
-        setIsFollowing(followed);
+        setIsFollowing(followStatus.followed);
+        setFollowId(followStatus.followId);
         setFollowerCount(count);
       } catch (error) {
         console.error('Failed to fetch follow status:', error);

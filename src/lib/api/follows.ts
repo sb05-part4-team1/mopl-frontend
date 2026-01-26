@@ -8,7 +8,7 @@
  */
 
 import apiClient from './client';
-import type { FollowDto, FollowRequest } from '@/lib/types';
+import type { FollowDto, FollowRequest, FollowStatusDto } from '@/lib/types';
 
 /**
  * Follow user (팔로우)
@@ -39,10 +39,10 @@ export const cancelFollow = async (followId: string): Promise<void> => {
  * GET /api/follows/followed-by-me
  *
  * @param followeeId - User ID to check
- * @returns Whether the user is followed by me
+ * @returns Follow status with followId if following
  */
-export const isFollowedByMe = async (followeeId: string): Promise<boolean> => {
-  const response = await apiClient.get<boolean>('/api/follows/followed-by-me', {
+export const isFollowedByMe = async (followeeId: string): Promise<FollowStatusDto> => {
+  const response = await apiClient.get<FollowStatusDto>('/api/follows/followed-by-me', {
     params: { followeeId },
   });
   return response.data;

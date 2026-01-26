@@ -49,6 +49,10 @@ export type DirectMessageDto = components['schemas']['DirectMessageDto'];
 // Follow types
 export type FollowDto = components['schemas']['FollowDto'];
 export type FollowRequest = components['schemas']['FollowRequest'];
+export type FollowStatusDto = {
+  followed: boolean;
+  followId: string | null;
+};
 
 // Notification types
 export type NotificationDto = components['schemas']['NotificationDto'];
