@@ -422,7 +422,7 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
-    "/api/sse": {
+    "/sse": {
         parameters: {
             query?: never;
             header?: never;
